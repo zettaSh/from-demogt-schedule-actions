@@ -1,0 +1,11 @@
+name: test
+on:
+  schedule:
+    - cron: '1/5 * * * *'
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Test
+       run: echo "Test run"
+     - run: echo '${{ toJSON(github) }}'
